@@ -50,7 +50,8 @@ function App() {
   const { data, loading, error } = state;
 
   return (
-    <div className='container flex flex-wrap justify-center gap-[15px]'>
+    <div className='container flex flex-wrap justify-center gap-[15px] pt-5'>
+
       {loading &&
 <div>
 <div className="flex items-center justify-center min-h-[100vh] w-100 " role='status'>
@@ -65,12 +66,12 @@ function App() {
       {error && <p className="text-2xl text-center">{error}</p>}
       {!loading && !error && data.map((ecomerce) => (
       <div className='flex  gap-5 flex-wrap'>
-        <div>
+        <div className='text-center'>
         <img src={ecomerce.image} alt={ecomerce.title} className="w-64 h-auto rounded-md shadow-md  mt-2 mb-2" />
-        <h1 key={ecomerce.id} className="text-xl font-bold ">
+        <h1 key={ecomerce.id} className="text-xl font-semibold text-purple-800 ">
           {ecomerce. title}
         </h1>
-        <p>{ecomerce.description}</p>
+        <p className='text-slate-700 font-medium'>{ecomerce.description}</p>
 
 
         </div>
